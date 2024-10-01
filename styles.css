@@ -1,0 +1,152 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: black;
+    color: aliceblue;
+}
+
+#chessboard {
+    display: grid;
+    grid-template-rows: repeat(8, 80px);
+    grid-template-columns: repeat(8, 80px);
+    border: 5px solid black;
+    transition: transform 0.5s ease-in-out;
+    transform-origin: center;
+}
+
+.square {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 60px;
+    cursor: pointer;
+}
+
+.square:nth-child(odd) {
+    background-color: #143fe9;
+}
+
+.square:nth-child(even) {
+    background-color: #a1d4f8;
+}
+
+.white-piece {
+    color: white;
+    font-size: 60px;
+}
+
+.black-piece {
+    color: black;
+    font-size: 60px;
+}
+
+.highlight {
+    background-color: yellow;
+    z-index: 1000;
+}
+
+.modal {
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    color: #45a049;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #2151ff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0015ff;
+}
+
+#music-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #140cff;
+    color: antiquewhite;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+#music-btn:hover {
+    background-color: #000a7b;
+}
+
+#music-icon {
+    width: 30px;
+    height: auto;
+    border-radius: 50%;
+    filter: brightness(0) invert(1);
+}
+
+@media (max-width: 480px) {
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+        background-color: black;
+        color: aliceblue;
+        margin-top: -100px;
+    }
+
+    #chessboard {
+        display: grid;
+        grid-template-rows: repeat(8, 48px);
+        grid-template-columns: repeat(8, 48px);
+        border: 5px solid black;
+        transition: transform 0.5s ease-in-out;
+        transform-origin: center;
+    }
+
+    .square {
+        width: 48px;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 30px;
+        cursor: pointer;
+    }
+
+    #music-icon {
+        width: 20px;
+        height: auto;
+        border-radius: 50px;
+    }
+}
